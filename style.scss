@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@700&display=swap');
+$font-title       : 'Exo',
+sans-serif;
+$font-w-title: 700;
+$font-s-title: 3rem;
+$black       : rgb(31, 30, 30);
+$white       : rgb(226, 226, 226);
+$yellow-bg   :#fff476;
+$gray        : #555;
+
+* {
+    margin : 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display           : grid;
+    grid-template-rows: repeat(3, 1fr);
+    min-width         : 375px;
+}
+
+.audio__container {
+    grid-row        : 2 / 3;
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    gap             : 40px;
+    background-color: $gray;
+    border-radius   : 25px;
+    margin          : auto;
+    padding         : 20px 10px;
+    width           : 80%;
+}
+
+.audio__container--title {
+    background-color: $yellow-bg;
+    border          : 1px $black solid;
+    border-radius   : 25px;
+    color           : $black;
+    font-family     : $font-title;
+    font-weight     : $font-w-title;
+    font-size       : $font-s-title;
+    padding         : 10px 20px;
+    text-decoration: none;
+}
+
+.audio__container--player {
+    filter: invert(100%);
+}
