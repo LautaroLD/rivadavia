@@ -19,7 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
   background-color: #555;
   border-radius: 25px;
   margin: auto;
@@ -34,11 +34,31 @@ body {
   color: #1f1e1e;
   font-family: "Exo", sans-serif;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 3.2rem;
   padding: 10px 20px;
   text-decoration: none;
 }
 
 .audio__container--player {
   filter: invert(100%);
+}
+
+.bx__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  height: auto;
+  width: 100%;
+  color: #e2e2e2;
+}
+.bx__container .bx {
+  width: -webkit-min-content;
+  width: min-content;
+  padding: 15px;
+  font-size: 3.2rem;
+  background-color: #1f1e1e;
+  border-radius: 50px;
+}
+.bx__container .bx:active {
+  background-color: #fff476;
 }

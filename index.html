@@ -7,15 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
 
 <body>
     <div class="audio__container">
-        <a href="./index.html" class="audio__container--title">RADIO RIVADAVIA</a>
-        <audio class="audio__container--player"
-            src="https://playerservices.streamtheworld.com/api/livestream-redirect/RIVADAVIAAAC.aac" controls autoplay>
+        <a class="audio__container--title">RADIO RIVADAVIA</a>
+        <audio onabort="recargar(event)" class="audio__container--player" id="audioId"
+            src="https://playerservices.streamtheworld.com/api/livestream-redirect/RIVADAVIAAAC.aac" preload autoplay  >
         </audio>
+        <div class="bx__container" >
+            <i id="bx-btn-play-pause" onclick="empezarParar()" class='bx bx-pause'></i>
+            <i id="bx-btn-reset" onclick="recargar()"class='bx bx-reset'></i>
+            <i id="bx-btn-muteOnOff" onclick="mutear()" class='bx bx-volume-full'></i>
+        </div>
     </div>
+    <script src="./config.js"></script>
 </body>
 
 </html>

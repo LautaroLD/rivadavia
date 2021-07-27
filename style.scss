@@ -2,7 +2,7 @@
 $font-title       : 'Exo',
 sans-serif;
 $font-w-title: 700;
-$font-s-title: 3rem;
+$font-s-title: 3.2rem;
 $black       : rgb(31, 30, 30);
 $white       : rgb(226, 226, 226);
 $yellow-bg   :#fff476;
@@ -28,7 +28,7 @@ body {
     display         : flex;
     flex-direction  : column;
     align-items     : center;
-    gap             : 40px;
+    gap             : 20px;
     background-color: $gray;
     border-radius   : 25px;
     margin          : auto;
@@ -50,4 +50,23 @@ body {
 
 .audio__container--player {
     filter: invert(100%);
+}
+.bx__container{
+    display: grid;
+    grid-template-columns: repeat(3
+    , 1fr);
+    justify-items: center;
+    height: auto;
+    width: 100%;
+    color: $white;
+    .bx {
+        width: min-content;
+        padding: 15px;
+        font-size: $font-s-title;
+        background-color: $black;
+        border-radius: 50px;
+        &:active {
+            background-color: $yellow-bg;
+        }
+    }
 }
