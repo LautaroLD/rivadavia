@@ -8,10 +8,6 @@ const reconect = () => {
             }
         }, 1000 * 3);
 }
-const vuelta = () => {
-    let est = document.getElementById("audioId").contentWindow
-    est.location.reload()
-}
 const recargar = () => {
     console.log()
     document.location.reload(audioElement);
