@@ -1,36 +1,36 @@
 const audioElement = document.getElementById("audioId")
-const reconect = () => {
-        setTimeout(() => {
-            let errorCode = audioElement.error.code
-            console.log(errorCode)
-            if (errorCode) {
-                document.location.reload();    
+
+audioElement.addEventListener('canplay', (ev) => {
+    console.log(ev)
+    audioElement.play()
+})
+audioElement.addEventListener('error', (ev) => {
+    audioElement.load()
+})
+const controles = (btn) => {
+    let btn_play_pause = document.getElementById("bx-btn-play-pause")
+    let btn_mute = document.getElementById("bx-btn-muteOnOff")
+    switch (btn) {
+        case 'play':
+            if (btn_play_pause.className === "bx bx-play") {
+                audioElement.play()
+                btn_play_pause.className = "bx bx-pause"
+            } else {
+                audioElement.pause()
+                btn_play_pause.className = "bx bx-play"
             }
-        }, 1000 * 3);
-}
-const recargar = () => {
-    console.log()
-    document.location.reload(audioElement);
-}
-const empezarParar = () => {
-    let btn = document.getElementById("bx-btn-play-pause")
-    if (btn.className == "bx bx-play") {
-        audioElement.play()
-        btn.className = "bx bx-pause"
-    } else {
-        audioElement.pause()
-        btn.className = "bx bx-play"
-    }
-
-}
-const mutear = () => {
-    let btn = document.getElementById("bx-btn-muteOnOff")
-    if (btn.className == "bx bx-volume-mute") {
-        audioElement.muted = false
-        btn.className = "bx bx-volume-full"
-    } else {
-        audioElement.muted = true
-        btn.className = "bx bx-volume-mute"
+            break;
+        case 'mute':
+            if (audioElement.muted) {
+                audioElement.muted = false
+                btn_mute.className = "bx bx-volume-full"
+            } else {
+                audioElement.muted = true
+                btn_mute.className = "bx bx-volume-mute"
+            }
+            break;
+        case 'refresh':
+            audioElement.load()
+            break;
     }
 }
-
