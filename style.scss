@@ -70,3 +70,15 @@ body {
         }
     }
 }
+.reconect-container-disable{
+    display: none;
+}
+.reconect-container{
+    font-size: $font-s-title;
+    font-family: $font-title;
+    font-weight: $font-w-title;
+    color: $white;
+    .bx-spin {
+        margin-right: 20px;
+    }
+}

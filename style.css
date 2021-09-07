@@ -62,3 +62,17 @@ body {
 .bx__container .bx:active {
   background-color: #fff476;
 }
+
+.reconect-container-disable {
+  display: none;
+}
+
+.reconect-container {
+  font-size: 3.2rem;
+  font-family: "Exo", sans-serif;
+  font-weight: 700;
+  color: #e2e2e2;
+}
+.reconect-container .bx-spin {
+  margin-right: 20px;
+}
