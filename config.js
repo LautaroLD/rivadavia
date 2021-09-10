@@ -13,8 +13,8 @@ function stalled_audio () {
 }
 function canplay_audio () {
         reconect.className = "reconect-container-disable"
-        // audioElement.play()
-        // btn_play_pause.className = "bx bx-pause"
+        audioElement.play()
+        btn_play_pause.className = "bx bx-pause"
 }
 
 const controles = (btn) => {
