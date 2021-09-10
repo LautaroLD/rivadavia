@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Radio Rivadavia</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="shortcut icon" href="icon.svg" type="image/x-icon">
 </head>
 
 <body>
     <div class="audio__container">
         <a class="audio__container--title">RADIO RIVADAVIA</a>
-        <form action=""></form>
-        <audio class="audio__container--player" id="audioId" preload src="https://playerservices.streamtheworld.com/api/livestream-redirect/RIVADAVIAAAC.aac">
+        <audio class="audio__container--player" id="audioId" preload="metadata" onstalled="stalled_audio ()" oncanplay="canplay_audio ()" onloadstart="loadstart_audio ()" src="https://playerservices.streamtheworld.com/api/livestream-redirect/RIVADAVIAAAC.aac">
         </audio>
         <div class="reconect-container" id="reconect-container" >
             <p><i class='bx bx-loader-alt bx-spin'></i>Conectando...</p>
         </div>
         <div class="bx__container">
-            <i onclick="controles('play')" id="bx-btn-play-pause" class='bx bx-pause'></i>
+            <i onclick="controles('play')" id="bx-btn-play-pause" class='bx bx-play'></i>
             <i onclick="controles('refresh')" id="bx-btn-reset" class='bx bx-reset'></i>
             <i onclick="controles('mute')" id="bx-btn-muteOnOff" class='bx bx-volume-full'></i>
         </div>

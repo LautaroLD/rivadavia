@@ -1,39 +1,23 @@
 const audioElement = document.getElementById("audioId")
 const reconect = document.getElementById("reconect-container")
-// if (audioElement.readyState == 0) {
-//     console.log("0")
-// }
-// if (audioElement.readyState == 1) {
-//     console.log("1")
-// }
-// if (audioElement.readyState == 2) {
-//     console.log("2")
-// }
-// if (audioElement.readyState == 3) {
-//     console.log("3")
-// }
-// if (audioElement.readyState == 4) {
-//     console.log("4")
-// }
-audioElement.addEventListener('loadstart', (ev) => {
-    reconect.className = "reconect-container"
-})
 
-audioElement.addEventListener('stalled', (ev) => {
-    reconect.className = "reconect-container"
+let btn_play_pause = document.getElementById("bx-btn-play-pause")
+let btn_mute = document.getElementById("bx-btn-muteOnOff")
+
+function loadstart_audio () {
+        reconect.className = "reconect-container"
+}
+function stalled_audio () {
+        reconect.className = "reconect-container"
         audioElement.load()
-})
-audioElement.addEventListener('canplay', (ev) => {
-    reconect.className = "reconect-container-disable"
-    audioElement.play()
-})
+}
+function canplay_audio () {
+        reconect.className = "reconect-container-disable"
+        // audioElement.play()
+        // btn_play_pause.className = "bx bx-pause"
+}
 
-// audioElement.addEventListener('error', (ev) => {
-//     audioElement.load()
-// })
 const controles = (btn) => {
-    let btn_play_pause = document.getElementById("bx-btn-play-pause")
-    let btn_mute = document.getElementById("bx-btn-muteOnOff")
     switch (btn) {
         case 'play':
             if (btn_play_pause.className === "bx bx-play") {
@@ -55,6 +39,7 @@ const controles = (btn) => {
             break;
         case 'refresh':
             audioElement.load()
+            btn_play_pause.className = "bx bx-play"
             break;
     }
 }
