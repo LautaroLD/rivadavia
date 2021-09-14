@@ -1,21 +1,31 @@
-const audioElement = document.getElementById("audioId")
+let audioElement = document.getElementById("audioId")
 const reconect = document.getElementById("reconect-container")
-
 let btn_play_pause = document.getElementById("bx-btn-play-pause")
 let btn_mute = document.getElementById("bx-btn-muteOnOff")
 
-function loadstart_audio () {
-        reconect.className = "reconect-container"
-}
-function stalled_audio () {
-        reconect.className = "reconect-container"
-        audioElement.load()
-}
-function canplay_audio () {
-        reconect.className = "reconect-container-disable"
-        audioElement.play()
-        btn_play_pause.className = "bx bx-pause"
-}
+audioElement = new Audio("https://playerservices.streamtheworld.com/api/livestream-redirect/RIVADAVIAAAC.aac")
+
+audioElement.addEventListener("playing", () => {
+    btn_play_pause.className = "bx bx-pause"
+})
+
+audioElement.addEventListener("canplay", () => {
+    console.log("canplay")
+    reconect.className = "reconect-container-disable"
+    audioElement.play()
+})
+audioElement.addEventListener("loadstart", () => {
+    console.log("loadstart")
+    reconect.className = "reconect-container"
+})
+
+audioElement.addEventListener("stalled", () => {
+    console.log("error")
+    reconect.lastElementChild.innerText = "Reconectando..."
+    reconect.className = "reconect-container"
+    audioElement.load()
+})
+
 
 const controles = (btn) => {
     switch (btn) {

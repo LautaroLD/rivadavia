@@ -14,10 +14,10 @@
 <body>
     <div class="audio__container">
         <a class="audio__container--title">RADIO RIVADAVIA</a>
-        <audio class="audio__container--player" id="audioId" preload="metadata" onstalled="stalled_audio ()" oncanplay="canplay_audio ()" onloadstart="loadstart_audio ()" src="https://playerservices.streamtheworld.com/api/livestream-redirect/RIVADAVIAAAC.aac">
+        <div class="audio__container--player" id="audioId"></div>
         </audio>
         <div class="reconect-container" id="reconect-container" >
-            <p><i class='bx bx-loader-alt bx-spin'></i>Conectando...</p>
+            <i class='bx bx-loader-alt bx-spin'></i><p>Conectando...</p>
         </div>
         <div class="bx__container">
             <i onclick="controles('play')" id="bx-btn-play-pause" class='bx bx-play'></i>
