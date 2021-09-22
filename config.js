@@ -7,6 +7,22 @@ audioElement = new Audio("https://playerservices.streamtheworld.com/api/livestre
 
 audioElement.addEventListener("playing", () => {
     btn_play_pause.className = "bx bx-pause"
+    console.log("123")
+
+})
+// window.addEventListener("offline", ()=> {alert("dasdsaddd"),location.reload()})
+navigator.connection.addEventListener('change',()=> {
+    location.reload()
+    
+    // alert("cambio de red")
+})
+
+// if (navigator.onLine == false) {
+//     alert("error de red")
+//     location.reload()
+// }
+audioElement.addEventListener("paused", () => {
+    btn_play_pause.className = "bx bx-play"
 })
 
 audioElement.addEventListener("canplay", () => {
