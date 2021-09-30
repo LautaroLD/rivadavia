@@ -14,10 +14,12 @@
 <body>
     <div class="audio__container">
         <a class="audio__container--title">RADIO RIVADAVIA</a>
-        <div class="audio__container--player" id="audioId"></div>
+        <audio preload="auto" class="audio__container--player" id="audioId"
+            src="https://playerservices.streamtheworld.com/api/livestream-redirect/RIVADAVIAAAC.aac">
         </audio>
-        <div class="reconect-container" id="reconect-container" >
-            <i class='bx bx-loader-alt bx-spin'></i><p>Conectando...</p>
+        <div class="reconect-container" id="reconect-container">
+            <i class='bx bx-loader-alt bx-spin'></i>
+            <p>Conectando...</p>
         </div>
         <div class="bx__container">
             <i id="bx-btn-play-pause" class='bx bx-play'></i>
@@ -25,7 +27,7 @@
             <i id="bx-btn-muteOnOff" class='bx bx-volume-full'></i>
         </div>
     </div>
+    
     <script type="module" src="./config.mjs"></script>
 </body>
-
 </html>
