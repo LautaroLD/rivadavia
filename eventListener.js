@@ -22,10 +22,19 @@ variables.btn_reset.addEventListener("click", () => {
     variables.btn_play_pause.className = "bx bx-play"
 })
 
+const audio_stalled = () => {
+    variables.audioElement.addEventListener("stalled", () => {
+        variables.reconect.lastElementChild.innerText = "Reconectando..."
+        variables.reconect.className = "reconect-container"
+        console.log("stalled")
+        variables.audioElement.load()
+    })
+}
 export const audio_playing = () => {
     variables.audioElement.addEventListener("playing", () => {
         variables.btn_play_pause.className = "bx bx-pause"
         variables.reconect.className = "reconect-container-disable"
+        audio_stalled()
     })
 }
 export const navigator_change = () => {
@@ -50,13 +59,5 @@ export const audio_loadstart = () => {
     variables.audioElement.addEventListener("loadstart", () => {
         console.log("loadstart")
         variables.reconect.className = "reconect-container"
-    })
-}
-export const audio_stalled = () => {
-    variables.audioElement.addEventListener("error", () => {
-        variables.reconect.lastElementChild.innerText = "Reconectando..."
-        variables.reconect.className = "reconect-container"
-        console.log("error")
-        variables.audioElement.load()
     })
 }
