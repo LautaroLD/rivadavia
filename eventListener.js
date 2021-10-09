@@ -37,19 +37,6 @@ export const audio_playing = () => {
         audio_stalled()
     })
 }
-export const navigator_offline = () => {
-    if (!navigator.onLine) {
-        setTimeout(() => {
-            location.reload()
-        }, 4000);
-    }
-}
-export const navigator_change = () => {
-    navigator.connection.addEventListener('change', () => {
-        console.log('change')
-        location.reload()
-    })
-}
 export const audio_paused = () => {
     variables.audioElement.addEventListener('pause', () => {
         variables.btn_play_pause.className = 'bx bx-play'
@@ -67,4 +54,22 @@ export const audio_loadstart = () => {
         console.log('loadstart')
         variables.reconect.className = 'reconect-container'
     })
+}
+export const navigator_offline = () => {
+    if (!navigator.onLine) {
+        setTimeout(() => {
+            location.reload()
+        }, 4000);
+    }
+}
+export const navigator_change = () => {
+    navigator.connection.addEventListener('change', () => {
+        console.log('change')
+        location.reload()
+    })
+}
+export const document_domain_none = () => {
+    if (document.domain.length < 1) {
+        location.reload()
+    }
 }
