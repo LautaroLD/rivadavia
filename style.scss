@@ -21,7 +21,7 @@ body {
     display           : grid;
     grid-template-rows: 1fr 2fr 1fr;
     min-width         : 425px;
-    height: 100vh;
+    height            : 100vh;
 }
 
 .audio__container {
@@ -46,43 +46,56 @@ body {
     font-weight     : $font-w-title;
     font-size       : $font-s-title;
     padding         : 10px 20px;
-    text-decoration: none;
+    text-decoration : none;
 }
 
 .audio__container--player {
     filter: invert(100%);
 }
-.bx__container{
-    display: grid;
-    grid-template-columns: repeat(3
-    , 1fr);
-    justify-items: center;
-    height: auto;
-    width: 100%;
-    color: $white;
+
+.bx__container {
+    display              : grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items        : center;
+    height               : auto;
+    width                : 100%;
+    color                : $white;
+
     .bx {
-        width: min-content;
-        padding: 15px;
-        font-size: $font-s-title;
+        width           : min-content;
+        padding         : 15px;
+        font-size       : $font-s-title;
         background-color: $black;
-        border-radius: 50px;
+        border-radius   : 50px;
+
         &:active {
             background-color: $yellow-bg;
         }
     }
 }
-.reconect-container-disable{
+
+.reconect-container-disable {
     display: none;
 }
-.reconect-container{
-    display: flex;
-    align-items: center;
+
+.reconect-container {
+    display        : flex;
+    align-items    : center;
     justify-content: center;
-    font-size: $font-s-title;
-    font-family: $font-title;
-    font-weight: $font-w-title;
-    color: $white;
+    font-size      : $font-s-title;
+    font-family    : $font-title;
+    font-weight    : $font-w-title;
+    color          : $white;
+
     .bx-spin {
         margin-right: 20px;
     }
+}
+
+#parrafo-events {
+    color      : $white;
+    font-family: $font-title;
+    font-size  : $font-s-title - 1;
+    font-weight: $font-w-title;
+    filter: opacity(70%);
 }

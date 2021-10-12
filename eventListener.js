@@ -26,7 +26,7 @@ const audio_stalled = () => {
     variables.audioElement.addEventListener('stalled', () => {
         variables.reconect.lastElementChild.innerText = 'Reconectando...'
         variables.reconect.className = 'reconect-container'
-        console.log('stalled')
+        variables.parrafo_event.innerText = 'stalled'
         variables.audioElement.load()
     })
 }
@@ -34,24 +34,26 @@ export const audio_playing = () => {
     variables.audioElement.addEventListener('playing', () => {
         variables.btn_play_pause.className = 'bx bx-pause'
         variables.reconect.className = 'reconect-container-disable'
+        variables.parrafo_event.innerText = 'playing'
         audio_stalled()
     })
 }
 export const audio_paused = () => {
     variables.audioElement.addEventListener('pause', () => {
         variables.btn_play_pause.className = 'bx bx-play'
+        variables.parrafo_event.innerText = 'pause'
     })
 }
 export const audio_canplay = () => {
     variables.audioElement.addEventListener('canplay', () => {
-        console.log('canplay')
+        variables.parrafo_event.innerText ='canplay'
         variables.reconect.className = 'reconect-container-disable'
         variables.audioElement.play()
     })
 }
 export const audio_loadstart = () => {
     variables.audioElement.addEventListener('loadstart', () => {
-        console.log('loadstart')
+        variables.parrafo_event.innerText ='loadstart'
         variables.reconect.className = 'reconect-container'
     })
 }
@@ -59,12 +61,12 @@ export const navigator_offline = () => {
     if (!navigator.onLine) {
         setTimeout(() => {
             location.reload()
-        }, 4000);
+        }, 2000);
     }
 }
 export const navigator_change = () => {
     navigator.connection.addEventListener('change', () => {
-        console.log('change')
+        variables.parrafo_event.innerText ='change'
         location.reload()
     })
 }
