@@ -97,5 +97,102 @@ body {
     font-family: $font-title;
     font-size  : $font-s-title - 1;
     font-weight: $font-w-title;
-    filter: opacity(70%);
+    filter     : opacity(70%);
 }
+#slider-container {
+    width: 80%;
+}
+
+#slider {
+    -webkit-appearance: none;
+    margin            : 10px 0;
+    width             : 100%;
+    border-radius: 10px;
+}
+
+// #slider:focus {
+//     outline: none;
+// }
+
+#slider::-webkit-slider-runnable-track {
+    width        : 100%;
+    height       : 5px;
+    // cursor       : pointer
+    background   : #B6B6B6;
+    border-radius: 25px;
+}
+
+#slider::-webkit-slider-thumb {
+    height            : 5px;
+    width             : 15px;
+    background        : $yellow-bg;
+    cursor            : pointer;
+    -webkit-appearance: none;
+    border-radius: 10px;
+}
+
+// #slider:focus::-webkit-slider-runnable-track {
+//     background: #B6B6B6;
+// }
+
+// #slider::-moz-range-track {
+//     width        : 100%;
+//     height       : 16px;
+//     cursor       : pointer;
+//     box-shadow   : 0px 0px 0px #000000;
+//     background   : $yellow-bg;
+//     border-radius: 25px;
+//     border       : 1px solid #8A8A8A;
+// }
+
+// #slider::-moz-range-thumb {
+//     box-shadow   : 1px 1px 1px $yellow-bg;
+//     border       : 1px solid $yellow-bg;
+//     height       : 24px;
+//     width        : 35px;
+//     border-radius: 6px;
+//     background   : $yellow-bg;
+//     cursor       : pointer;
+// }
+
+// #slider::-ms-track {
+//     width       : 100%;
+//     height      : 16px;
+//     cursor      : pointer;
+//     background  : $yellow-bg;
+//     border-color: transparent;
+//     color       : $yellow-bg;
+// }
+
+// #slider::-ms-fill-lower {
+//     background   : #B6B6B6;
+//     border       : 1px solid #8A8A8A;
+//     border-radius: 50px;
+//     box-shadow   : 0px 0px 0px #000000;
+// }
+
+// #slider::-ms-fill-upper {
+//     background   : #B6B6B6;
+//     border       : 1px solid #8A8A8A;
+//     border-radius: 50px;
+//     box-shadow   : 0px 0px 0px #000000;
+// }
+
+// #slider::-ms-thumb {
+//     margin-top   : 1px;
+//     box-shadow   : 1px 1px 1px #828282;
+//     border       : 1px solid #8A8A8A;
+//     height       : 24px;
+//     width        : 35px;
+//     border-radius: 6px;
+//     background   : #d31e1e;
+//     cursor       : pointer;
+// }
+
+// #slider:focus::-ms-fill-lower {
+//     background: #B6B6B6;
+// }
+
+// #slider:focus::-ms-fill-upper {
+//     background: #B6B6B6;
+// }

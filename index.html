@@ -14,12 +14,15 @@
 <body>
     <div class="audio__container">
         <a class="audio__container--title">RADIO RIVADAVIA</a>
-        <audio preload="auto" class="audio__container--player" id="audioId"
+        <audio  preload="auto" class="audio__container--player" id="audioId"
             src="https://24873.live.streamtheworld.com/RIVADAVIAAAC.aac">
         </audio>
         <div class="reconect-container" id="reconect-container">
             <i class='bx bx-loader-alt bx-spin'></i>
             <p>Conectando...</p>
+        </div>
+        <div id="slider-container" >
+            <input id="slider" type="range">
         </div>
         <div class="bx__container">
             <i id="bx-btn-play-pause" class='bx bx-play'></i>

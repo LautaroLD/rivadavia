@@ -1,4 +1,5 @@
 import * as variables from './variables.js'
+
 variables.btn_play_pause.addEventListener('click', () => {
     if (variables.btn_play_pause.className === 'bx bx-play') {
         variables.audioElement.play()
@@ -42,6 +43,7 @@ export const audio_playing = () => {
         variables.btn_play_pause.className = 'bx bx-pause'
         variables.reconect.className = 'reconect-container-disable'
         variables.parrafo_event.innerText = 'playing'
+        // console.log(variables.audioElement.buffered.length)
         audio_stalled()
     })
 }
@@ -56,6 +58,7 @@ export const audio_canplay = () => {
         variables.parrafo_event.innerText ='canplay'
         variables.reconect.className = 'reconect-container-disable'
         variables.audioElement.play()
+        // print_slider()
     })
 }
 export const audio_loadstart = () => {
