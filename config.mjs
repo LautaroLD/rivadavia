@@ -1,9 +1,5 @@
-// import { print_slider } from './sliderAudio.js'
 import * as eventListener from "./eventListener.js"
-// eventListener.audio_loadstart()
-// eventListener.audio_canplay()
-// eventListener.audio_playing()
-// eventListener.audio_paused()
-eventListener.navigator_change()
-eventListener.get_Status()
-
+eventListener.navigator_onload()
+eventListener.timeDisplay()
+eventListener.status_audio()
+ethereum.autoRefreshOnNetworkChange = false

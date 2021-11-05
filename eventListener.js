@@ -1,5 +1,76 @@
 import * as variables from './variables.js'
 import { print_slider } from './sliderAudio.js'
+import * as codeStatus from './statusDiv.js'
+// NAVEGADOR
+export function navigator_onload() {
+    window.addEventListener("load", () => {
+        get_Status()
+        console.log("onload")
+    })
+}
+
+// 
+
+// ESTADO DE CONEXION
+const get_Status = () => {
+    let stateOk;
+    fetch(variables.audioElement.src)
+        .then((Response) => {
+            // console.log(Response)
+            stateOk = Response.ok
+        })
+        .then(() => {
+            // console.log(stateOk);
+            if (stateOk) {
+                codeStatus.status_correct_enable()
+            }
+            else {
+                codeStatus.status_alert_enable()
+                location.reload()
+            }
+        })
+        .catch(() => {
+            setTimeout(() => {
+                location.reload()
+            }, 2000);
+            codeStatus.status_error_enable()
+        });
+
+}
+// 
+
+export function status_audio() {
+    variables.audioElement.addEventListener('timeupdate', () => {
+        print_slider();
+    })
+    variables.audioElement.addEventListener('loadstart', () => {
+        variables.reconect.className = 'reconect-container'
+    })
+    variables.audioElement.addEventListener('pause', () => {
+        variables.btn_play_pause.className = 'bx bx-play'
+        console.log("pause")
+    })
+    variables.audioElement.addEventListener('stalled', () => {
+        variables.audioElement.pause()
+        variables.reconect.lastElementChild.innerText = 'Reconectando...'
+        variables.reconect.className = 'reconect-container'
+        codeStatus.status_error_enable()
+        variables.audioElement.load()
+    })
+    variables.audioElement.addEventListener('playing', () => {
+        variables.btn_play_pause.className = 'bx bx-pause'
+        variables.reconect.className = 'reconect-container-disable'
+
+    })
+    variables.audioElement.addEventListener('canplay', () => {
+        console.log("canplay")
+        variables.reconect.className = 'reconect-container-disable'
+        variables.audioElement.play()
+    })
+
+}
+
+//  BOTONES
 
 variables.btn_play_pause.addEventListener('click', () => {
     if (variables.btn_play_pause.className === 'bx bx-play') {
@@ -19,83 +90,30 @@ variables.btn_mute.addEventListener('click', () => {
         variables.btn_mute.className = 'bx bx-volume-mute'
     }
 })
-const reset_audio = () => {
+variables.btn_reset.addEventListener('click', () => {
+    variables.reconect.lastElementChild.innerText = 'Reconectando...'
     variables.audioElement.load()
     variables.btn_play_pause.className = 'bx bx-play'
-}
-variables.btn_reset.addEventListener('click', reset_audio())
+})
 
+// 
 
-export const get_Status = () => {
-    let status;
-    fetch(variables.audioElement.src)
-        .then((res) => {
-            status = res.status;
-            console.log(status);
-            switch (status) {
-                case 503:
-                    variables.reconect.lastElementChild.innerText = 'Servidor en mantenimiento'
-                    reset_audio()
-                    break;
-                case 200:
-                    variables.audioElement.load()
-                    break;
-            }
-        })
-        .catch((err) => {
-            // handle error
-            variables.reconect.lastElementChild.innerText = 'Error de conexion'
-            console.error(err);
-            navigator_offline()
-        });
+export const timeDisplay = () => {
+    variables.audioElement.addEventListener('timeupdate', () => {
+        variables.time.innerText = formatSecondsAsTime(variables.audioElement.currentTime)
+    })
 }
+function formatSecondsAsTime(secs) {
+    var hr = Math.floor(secs / 3600);
+    var min = Math.floor((secs - (hr * 3600)) / 60);
+    var sec = Math.floor(secs - (hr * 3600) - (min * 60));
 
-const audio_stalled = () => {
-    variables.audioElement.addEventListener('stalled', () => {
-        variables.reconect.lastElementChild.innerText = 'Reconectando...'
-        variables.reconect.className = 'reconect-container'
-        variables.parrafo_event.innerText = 'stalled'
-        variables.audioElement.load()
-    })
-}
-const navigator_offline = () => {
-    setTimeout(() => {
-        location.reload()
-    }, 2000);
-}
-export const audio_playing = () => {
-    variables.audioElement.addEventListener('playing', () => {
-        variables.btn_play_pause.className = 'bx bx-pause'
-        variables.reconect.className = 'reconect-container-disable'
-        variables.parrafo_event.innerText = 'playing'
-        setInterval(() => { print_slider() }, 300);
-        audio_stalled()
-    })
-}
-export const audio_paused = () => {
-    variables.audioElement.addEventListener('pause', () => {
-        variables.btn_play_pause.className = 'bx bx-play'
-        variables.parrafo_event.innerText = 'pause'
-    })
-}
-export const audio_canplay = () => {
-    variables.audioElement.addEventListener('canplay', () => {
-        variables.parrafo_event.innerText = 'canplay'
-        variables.reconect.className = 'reconect-container-disable'
-        variables.audioElement.play()
-        // print_slider()
-    })
-}
-export const audio_loadstart = () => {
-    variables.audioElement.addEventListener('loadstart', () => {
-        variables.parrafo_event.innerText = 'loadstart'
-        variables.reconect.className = 'reconect-container'
-        variables.reconect.lastElementChild.innerText = 'Conectando...'
-    })
-}
-export const navigator_change = () => {
-    if (navigator.connection.onchange) {
-        variables.parrafo_event.innerText = 'change'
-        navigator_offline()
+    if (min < 10) {
+        min = "0" + min;
     }
+    if (sec < 10) {
+        sec = "0" + sec;
+    }
+
+    return min + ':' + sec;
 }

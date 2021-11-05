@@ -81,16 +81,13 @@ body {
   margin-right: 20px;
 }
 
-#parrafo-events {
-  color: #e2e2e2;
-  font-family: "Exo", sans-serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  filter: opacity(70%);
-}
-
 #slider-container {
   width: 80%;
+}
+#slider-container p {
+  color: #e2e2e2;
+  font-size: 2.2rem;
+  font-family: "Exo", sans-serif;
 }
 
 #slider {
@@ -114,4 +111,22 @@ body {
   cursor: pointer;
   -webkit-appearance: none;
   border-radius: 10px;
+}
+
+.status-error,
+.status-correct,
+.status-alert {
+  display: flex;
+  color: #e2e2e2;
+  font-family: "Exo", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  filter: opacity(70%);
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-container-disable {
+  display: none;
 }
