@@ -26,19 +26,20 @@ export function status_audio() {
     variables.audioElement.addEventListener('playing', () => {
         variables.btn_play_pause.className = 'bx bx-pause'
         variables.reconect.className = 'reconect-container-disable'
-        codeStatus.status_correct_enable()
+        // codeStatus.status_correct_enable()
     })
     variables.audioElement.addEventListener('canplay', () => {
         console.log("canplay")
         variables.reconect.className = 'reconect-container-disable'
         variables.audioElement.play()
     })
-    variables.audioElement.addEventListener('error', () => {
-        console.log("error")
-        codeStatus.status_error_enable("Volver a intentar")
-        variables.reconect.className = 'reconect-container-disable'
-        setTimeout(() =>
-            location.reload(), 2000);
-    })
+    // variables.audioElement.addEventListener('error', () => {
+    //     console.log("error")
+    //     // codeStatus.status_error_enable("Volver a intentar")
+    //     variables.reconect.lastElementChild.innerText = 'Reconectando...'
+    //     variables.reconect.className = 'reconect-container'
+    //     setTimeout(() =>
+    //         location.reload(), 2000);
+    // })
 
 }
