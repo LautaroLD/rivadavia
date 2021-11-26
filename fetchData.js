@@ -18,7 +18,7 @@ async function estado() {
         .catch((error) => {
             status.status_error_enable()
             variables.reconect.lastElementChild.innerText = 'Reconectando...'
-            variables.reconect.className = 'reconect-container'
+            variables.reconect.classList.replace('reconect-container-disable', 'reconect-container')
             setTimeout(() =>
                 location.reload(), 2000);
             new Error(error)
