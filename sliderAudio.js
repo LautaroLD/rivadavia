@@ -4,7 +4,7 @@ export function print_slider() {
 
         let element = Object.assign(variables.slider, {
             min: variables.audioElement.buffered.start(0),
-            max: variables.audioElement.buffered.end(0),
+            max: variables.audioElement.buffered.end(0) + 5,
             value: variables.audioElement.currentTime
         })
     }
