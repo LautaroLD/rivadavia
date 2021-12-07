@@ -3,7 +3,7 @@ import { print_slider } from './sliderAudio.js'
 import * as codeStatus from './statusDiv.js'
 
 
-export function status_audio() {
+function status_audio() {
     variables.audioElement.addEventListener('timeupdate', () => {
         print_slider();
     })
@@ -35,7 +35,7 @@ export function status_audio() {
     })
     variables.audioElement.addEventListener('error', () => {
         //     console.log("error")
-        codeStatus.status_error_enable("Volver a intentar")
+        codeStatus.status_error_enable()
         variables.reconect.lastElementChild.innerText = 'Reconectando...'
         variables.reconect.classList.replace('reconect-container-disable', 'reconect-container')
         setTimeout(() =>
@@ -43,3 +43,5 @@ export function status_audio() {
     })
 
 }
+
+export default status_audio

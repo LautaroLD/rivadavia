@@ -1,9 +1,7 @@
-import * as eventListener from "./eventListener.js"
-import * as botones from './botones.js'
-import * as time from './timeDisplay.js'
-import estado from './fetchData.js'
+import * as botones from './assets/botones.js'
+import * as time from './assets/timeDisplay.js'
+import estado from './assets/fetchData.js'
 estado()
 time.timeDisplay()
-eventListener.status_audio()
 botones.btn_event()
 ethereum.autoRefreshOnNetworkChange = false
