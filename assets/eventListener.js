@@ -9,6 +9,7 @@ function status_audio() {
     })
     variables.audioElement.addEventListener('loadstart', () => {
         variables.reconect.classList.replace('reconect-container-disable', 'reconect-container')
+        console.log('loadstart')
     })
     variables.audioElement.addEventListener('pause', () => {
         variables.btn_play_pause.className = 'bx bx-play'
