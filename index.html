@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Rivadavia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="shortcut icon" href="icon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <div class="audio__container">
+        <a class="audio__container--title">RADIO RIVADAVIA</a>
+        <img class="audio__container--img" src="./icon.svg" alt="">
+        <audio class="audio__container--player" id="audioId" src="https://24873.live.streamtheworld.com/RIVADAVIAAAC.aac"></audio>
+        <div class="reconect-container" id="reconect-container">
+            <i class='bx bx-loader-alt bx-spin'></i>
+            <p>Conectando...</p>
+        </div>
+        <div id="slider-container">
+            <input id="slider" class="slider" type="range">
+            <p id="time">00:00</p>
+        </div>
+        <div class="bx__container">
+            <i id="bx-btn-reset" class='bx bx-reset'></i>
+            <i id="bx-btn-play-pause" class='bx bx-play'></i>
+            <i id="bx-btn-muteOnOff" class='bx bx-volume-full'></i>
+        </div>
+        <div class="status-container">
+            <div id="status-error" class="status-container-disable">
+                <i class='bx bxs-circle' style='color:#ff0004'></i>
+                <p id="status-error--text" class="parrafo-status"></p>
+            </div>
+            <div id="status-correct" class="status-container-disable">
+                <i class='bx bxs-circle' style='color:#00ff1a'></i>
+                <p id="status-correct--text" class="parrafo-status">Conectado</p>
+            </div>
+            <div id="status-alert" class="status-container-disable">
+                <i class='bx bxs-circle' style='color:#fffb03'></i>
+                <p id="status-alert--text" class="parrafo-status"></p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./config.mjs"></script>
+</body>
+
+</html>

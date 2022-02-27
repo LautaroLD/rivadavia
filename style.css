@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow: hidden;
+  height: 100vh;
+}
+
+body {
+  min-width: 320px;
+  height: inherit;
+  background: linear-gradient(180deg, #9b923a 0%, black 80%);
+}
+
+.audio__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 95vh;
+  padding: 0 10px 0;
+}
+
+.audio__container--title {
+  color: white;
+  font-family: "Exo", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  padding: 10px 20px 0;
+  text-decoration: none;
+}
+
+.audio__container--img {
+  width: 65%;
+  padding-block: 3vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.bx__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  height: auto;
+  width: 100%;
+  color: white;
+}
+.bx__container .bx {
+  font-size: 3.5rem;
+  border-radius: 50px;
+}
+.bx__container .bx:active {
+  background-color: #fff476;
+}
+.bx__container .bx-play,
+.bx__container .bx-pause {
+  background-color: white;
+  color: black;
+  font-size: 6.5rem;
+  padding: 10px;
+}
+
+.reconect-container-disable {
+  display: none;
+}
+
+.reconect-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-family: "Exo", sans-serif;
+  font-weight: 700;
+  color: white;
+}
+.reconect-container .bx-spin {
+  margin-right: 20px;
+  font-weight: 700;
+}
+
+#slider-container {
+  width: 80%;
+  text-align: center;
+}
+#slider-container p {
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Exo", sans-serif;
+}
+
+#slider {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 10px;
+}
+
+#slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  background: #B6B6B6;
+  border-radius: 25px;
+}
+
+#slider::-webkit-slider-thumb {
+  height: inherit;
+  width: 20px;
+  background: #fff476;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border-radius: 10px;
+}
+
+.status-container-disable {
+  display: none;
+}
+
+.status-container {
+  margin-top: 3vh;
+}
+
+.status-error,
+.status-correct,
+.status-alert {
+  display: flex;
+  color: white;
+  font-family: "Exo", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  filter: opacity(50%);
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
