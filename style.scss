@@ -2,71 +2,97 @@
 $font-title       : 'Exo',
 sans-serif;
 $font-w-title: 700;
-$font-s-title: 3.2rem;
+$font-s-title: 2.5rem;
+$font-s-text : $font-s-title - 1;
+$font-s-btn  : 3.5rem;
 $black       : rgb(31, 30, 30);
-$white       : rgb(226, 226, 226);
+$white       : rgb(255, 255, 255);
 $yellow-bg   :#fff476;
 $gray        : #555;
 
 * {
-    margin : 0;
-    padding: 0;
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
 }
 
 html {
     font-size: 62.5%;
+    overflow : hidden;
+    height   : 100vh;
 }
 
 body {
-    display           : grid;
-    grid-template-rows: 1fr 2fr 1fr;
-    min-width         : 425px;
-    height            : 100vh;
+    // display           : grid;
+    // grid-template-rows: 1fr 2fr 1fr;
+    min-width : 320px;
+    height    : inherit;
+    background: linear-gradient(180deg, #9b923a 0%, rgba(0, 0, 0, 1) 80%);
 }
 
 .audio__container {
-    grid-row        : 2 / 3;
-    display         : flex;
-    flex-direction  : column;
-    align-items     : center;
-    gap             : 20px;
-    background-color: $gray;
-    border-radius   : 25px;
-    margin          : auto;
-    padding         : 20px 10px;
-    width           : 80%;
+    // grid-row        : 2 / 3;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-around;
+    align-items: center;
+    // gap                : 2.5vh;
+    height             : 95vh;
+    // border-radius   : 25px;
+    // margin          : auto;
+
+    padding            : 0 10px 0;
+    // width           : 80%;
 }
 
 .audio__container--title {
-    background-color: $yellow-bg;
-    border          : 1px $black solid;
-    border-radius   : 25px;
-    color           : $black;
-    font-family     : $font-title;
-    font-weight     : $font-w-title;
-    font-size       : $font-s-title;
-    padding         : 10px 20px;
-    text-decoration : none;
+    // background-color: $yellow-bg;
+    // border          : 1px $black solid;
+    // border-radius   : 25px;
+    color          : $white;
+    font-family    : $font-title;
+    font-weight    : $font-w-title;
+    font-size      : $font-s-title;
+    padding        : 10px 20px 0;
+    text-decoration: none;
+}
+
+.audio__container--img {
+    width           : 65%;
+    padding-block   : 3vh;
+    // border          : 1px solid black;
+    background-color: rgba(0, 0, 0, 0.4);
+    // width: 100%;
 }
 
 .bx__container {
     display              : grid;
     grid-template-columns: repeat(3, 1fr);
-    justify-items        : center;
+    place-items: center;
+
     height               : auto;
     width                : 100%;
     color                : $white;
 
     .bx {
-        width           : min-content;
-        padding         : 15px;
-        font-size       : $font-s-title;
-        background-color: $black;
-        border-radius   : 50px;
+        // padding         : 15px;
+        font-size          : $font-s-btn;
+        // background-color: $black;
+        border-radius      : 50px;
 
         &:active {
             background-color: $yellow-bg;
         }
+
+    }
+
+    .bx-play,
+    .bx-pause {
+        background-color: white;
+        color           : black;
+        font-size       : $font-s-btn + 3;
+        padding: 10px;
+        // padding-left: 12px;
     }
 }
 
@@ -78,23 +104,24 @@ body {
     display        : flex;
     align-items    : center;
     justify-content: center;
-    font-size      : $font-s-title;
+    font-size      : $font-s-text;
     font-family    : $font-title;
     font-weight    : $font-w-title;
     color          : $white;
 
     .bx-spin {
         margin-right: 20px;
-        font-weight: $font-w-title;
+        font-weight : $font-w-title;
     }
 }
 
 #slider-container {
-    width: 80%;
+    width     : 80%;
+    text-align: center;
 
     p {
         color      : $white;
-        font-size  : $font-s-title - 1;
+        font-size  : $font-s-text;
         font-family: $font-title;
 
     }
@@ -109,7 +136,7 @@ body {
 
 #slider::-webkit-slider-runnable-track {
     width           : 100%;
-    height          : 10px;
+    height          : 5px;
     // cursor       : pointer
     background      : #B6B6B6;
     border-radius   : 25px;
@@ -124,6 +151,13 @@ body {
     border-radius     : 10px;
 }
 
+
+.status-container-disable {
+    display: none;
+}
+.status-container{
+    margin-top: 3vh;
+}
 .status-error,
 .status-correct,
 .status-alert {
@@ -132,12 +166,8 @@ body {
     font-family    : $font-title;
     font-size      : $font-s-title - 1;
     font-weight    : $font-w-title;
-    filter         : opacity(70%);
+    filter         : opacity(50%);
     justify-content: center;
     align-items    : center;
     gap            : 10px;
-}
-
-.status-container-disable {
-    display: none;
 }
