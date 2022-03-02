@@ -13,9 +13,27 @@
 
 <body>
     <div class="audio__container">
-        <a class="audio__container--title">RADIO RIVADAVIA</a>
+        <div class="audio__container--title">
+            <h1 >RADIO RIVADAVIA</h1>
+            <div class="status-container">
+                <div id="status-error" class="status-container-disable">
+                    <i class='bx bxs-circle' style='color:#ff0004'></i>
+                    <p id="status-error--text" class="parrafo-status"></p>
+                </div>
+                <div id="status-correct" class="status-container-disable">
+                    <i class='bx bxs-circle' style='color:#00ff1a'></i>
+                    <p id="status-correct--text" class="parrafo-status">Conectado</p>
+                </div>
+                <div id="status-alert" class="status-container-disable">
+                    <i class='bx bxs-circle' style='color:#fffb03'></i>
+                    <p id="status-alert--text" class="parrafo-status"></p>
+                </div>
+            </div>
+        </div>
+
         <img class="audio__container--img" src="./icon.svg" alt="">
-        <audio class="audio__container--player" id="audioId" src="https://24873.live.streamtheworld.com/RIVADAVIAAAC.aac"></audio>
+        <audio class="audio__container--player" id="audioId"
+            src="https://24873.live.streamtheworld.com/RIVADAVIAAAC.aac"></audio>
         <div class="reconect-container" id="reconect-container">
             <i class='bx bx-loader-alt bx-spin'></i>
             <p>Conectando...</p>
@@ -29,20 +47,7 @@
             <i id="bx-btn-play-pause" class='bx bx-play'></i>
             <i id="bx-btn-muteOnOff" class='bx bx-volume-full'></i>
         </div>
-        <div class="status-container">
-            <div id="status-error" class="status-container-disable">
-                <i class='bx bxs-circle' style='color:#ff0004'></i>
-                <p id="status-error--text" class="parrafo-status"></p>
-            </div>
-            <div id="status-correct" class="status-container-disable">
-                <i class='bx bxs-circle' style='color:#00ff1a'></i>
-                <p id="status-correct--text" class="parrafo-status">Conectado</p>
-            </div>
-            <div id="status-alert" class="status-container-disable">
-                <i class='bx bxs-circle' style='color:#fffb03'></i>
-                <p id="status-alert--text" class="parrafo-status"></p>
-            </div>
-        </div>
+
     </div>
 
     <script type="module" src="./config.mjs"></script>

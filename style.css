@@ -20,18 +20,17 @@ body {
 .audio__container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
+  gap: 2.5vh;
   height: 95vh;
   padding: 0 10px 0;
 }
 
-.audio__container--title {
+.audio__container--title h1 {
   color: white;
   font-family: "Exo", sans-serif;
   font-weight: 700;
   font-size: 2.5rem;
-  padding: 10px 20px 0;
   text-decoration: none;
 }
 
@@ -117,10 +116,6 @@ body {
 
 .status-container-disable {
   display: none;
-}
-
-.status-container {
-  margin-top: 3vh;
 }
 
 .status-error,
