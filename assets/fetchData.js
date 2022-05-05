@@ -2,7 +2,7 @@ import * as status from './statusDiv.js';
 import * as variables from './variables.js'
 async function estado() {
     let cancel = new AbortController
-    await fetch('https://24873.live.streamtheworld.com/RIVADAVIAAAC.aac', { signal: cancel.signal })
+    await fetch('https://26643.live.streamtheworld.com/RIVADAVIAAAC.aac', { signal: cancel.signal })
         .then(Response => {
             Response.json();
             if (Response.status == 200) {
@@ -21,7 +21,7 @@ async function estado() {
             variables.reconect.classList.replace('reconect-container', 'reconect-container-disable')
             new Error(error)
             setTimeout(() =>
-            location.reload(), 2000);
+                location.reload(), 2000);
         })
 }
 export default estado
